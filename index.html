@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de Steven José Perea Romero, estudiante de Ingeniería en Software en la UNEMI.">
+  <title>Steven Perea | Portafolio</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <!-- Íconos de tecnologías -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Aplica el tema guardado antes de pintar para evitar parpadeo -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="nav__brand" href="index.html#inicio">SP<span class="nav__brand-dot">.</span></a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="#inicio">Inicio</a></li>
+        <li><a class="nav__link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="design-system.html">Design System</a></li>
+        <li><a class="nav__link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="btn btn--icon" type="button" id="theme-toggle" aria-pressed="false" aria-label="Activar tema oscuro">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+        </button>
+        <button class="btn btn--icon nav__toggle" type="button" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- ===================== INICIO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="hero__greeting">Hola, soy</p>
+          <h1 class="hero__title" id="hero-title">Steven José<br>Perea Romero</h1>
+          <p class="hero__role">Estudiante de Ingeniería en Software</p>
+          <p class="hero__summary">
+            Estoy aprendiendo a construir páginas web claras y fáciles de usar,
+            y quiero convertir ideas y necesidades reales en aplicaciones útiles.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--secondary" href="#contacto">Contactarme</a>
+          </div>
+        </div>
+
+        <figure class="hero__avatar">
+          <img src="assets/img/foto.jpg" alt="Fotografía de Steven Perea" width="400" height="400">
+          <figcaption class="visually-hidden">Fotografía de perfil</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MÍ ===================== -->
+    <section class="section section--alt" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about">
+        <article class="about__bio">
+          <h2 id="about-title">Sobre mí</h2>
+          <p>
+            Soy Steven Perea, estudiante de Ingeniería en Software en la Universidad
+            Estatal de Milagro (UNEMI). Estoy dando mis primeros pasos en el desarrollo
+            web con HTML, CSS y JavaScript.
+          </p>
+          <p>
+            Me gusta entender cómo funcionan las cosas por dentro y aprender construyendo.
+            Este portafolio es uno de mis primeros proyectos y lo seguiré ampliando a
+            medida que avance en la carrera.
+          </p>
+        </article>
+
+        <aside class="about__facts" aria-labelledby="facts-title">
+          <h3 id="facts-title">Formación</h3>
+          <dl class="facts">
+            <div class="facts__row">
+              <dt>Carrera</dt>
+              <dd>Ingeniería en Software</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Universidad</dt>
+              <dd>Universidad Estatal de Milagro (UNEMI)</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Aprendiendo ahora</dt>
+              <dd>JavaScript, Git y GitHub</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Intereses</dt>
+              <dd>Desarrollo web y diseño de interfaces</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="skills-title">Habilidades</h2>
+          <p class="section__intro">Lo que uso hoy y lo que estoy aprendiendo. El nivel refleja lo que he practicado con cada una.</p>
+        </header>
+
+        <div class="skills">
+          <article class="skills__group">
+            <h3>Frontend</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <i class="devicon-html5-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">HTML5</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-css3-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">CSS3</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-javascript-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">JavaScript</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__group">
+            <h3>Herramientas</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <i class="devicon-vscode-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">VS Code</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-git-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">Git</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-github-original skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">GitHub</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-docker-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">Docker</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+              <li class="skill">
+                <span class="skill__icon skill__icon--excel" aria-hidden="true">X</span>
+                <span class="skill__name">Excel</span>
+                <span class="skill__level" data-level="1"><span class="visually-hidden">Nivel:</span> Básico</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__group">
+            <h3>Aprendiendo ahora</h3>
+            <p class="skills__note">Tecnologías que estoy empezando a estudiar en la carrera.</p>
+            <ul class="skills__list">
+              <li class="skill">
+                <i class="devicon-python-plain colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">Python</span>
+              </li>
+              <li class="skill">
+                <i class="devicon-mysql-original colored skill__icon" aria-hidden="true"></i>
+                <span class="skill__name">Bases de datos (SQL)</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section class="section section--alt" id="proyectos" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="projects-title">Proyectos destacados</h2>
+          <p class="section__intro">Filtra por tipo de proyecto o abre uno para ver el detalle.</p>
+        </header>
+
+        <div class="filter" role="group" aria-label="Filtrar proyectos por tecnología">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-filter="web" aria-pressed="false">Sitios web</button>
+          <button class="chip" type="button" data-filter="gestion" aria-pressed="false">Sistemas de gestión</button>
+        </div>
+        <p class="filter__status" id="filter-status" aria-live="polite">Mostrando 3 proyectos</p>
+
+        <div class="projects">
+          <article class="card" data-tech="web">
+            <figure class="card__media">
+              <img src="assets/img/project-1.svg" alt="Vista previa del portafolio personal" loading="lazy" width="800" height="500">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Portafolio personal</h3>
+              <p class="card__desc">Este mismo sitio: mi presentación, habilidades, proyectos y un Design System documentado.</p>
+              <p class="card__problem"><strong>Problema:</strong> necesitaba un lugar público donde mostrar quién soy y lo que estoy aprendiendo.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">JavaScript</li><li class="tag">GitHub Pages</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal>Ver detalle</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/sperear2-web/portafolio" target="_blank" rel="noopener">Repositorio</a>
+                <a class="btn btn--ghost btn--sm" href="https://sperear2-web.github.io/portafolio/" target="_blank" rel="noopener">Ver sitio</a>
+              </div>
+            </div>
+            <div class="card__details" hidden>
+              <h4>Qué hace</h4>
+              <ul>
+                <li>Tema claro y oscuro que se recuerda al volver.</li>
+                <li>Filtro de proyectos y ventana de detalle.</li>
+                <li>Formulario de contacto con validación.</li>
+              </ul>
+              <h4>Qué aprendí</h4>
+              <p>Organizar estilos con variables CSS, hacer una página responsive y publicarla con Git y GitHub Pages.</p>
+            </div>
+          </article>
+
+          <article class="card" data-tech="gestion">
+            <figure class="card__media">
+              <img src="assets/img/project-2.svg" alt="Vista previa del sistema de inventario de equipos de TI" loading="lazy" width="800" height="500">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Inventario de equipos de TI</h3>
+              <p class="card__desc">Sistema para registrar y controlar equipos de tecnología: computadoras, impresoras, routers y otros dispositivos.</p>
+              <p class="card__problem"><strong>Problema:</strong> sin un registro ordenado es difícil saber qué equipos hay, dónde están, quién los usa y en qué estado se encuentran.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">JavaScript</li><li class="tag">Docker</li><li class="tag">Excel</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal>Ver detalle</button>
+              </div>
+            </div>
+            <div class="card__details" hidden>
+              <h4>Qué hace</h4>
+              <ul>
+                <li>Registrar equipos con código, tipo, marca, ubicación y responsable.</li>
+                <li>Buscar y filtrar equipos por estado: operativo, en reparación o dado de baja.</li>
+                <li>Editar y eliminar registros.</li>
+                <li>Base de datos ejecutándose en un contenedor Docker.</li>
+                <li>Exportar o preparar reportes del inventario en Excel.</li>
+              </ul>
+              <h4>Qué aprendí</h4>
+              <p>Organizar la información en tablas, levantar una base de datos con Docker y usar Excel para reportes.</p>
+            </div>
+          </article>
+
+          <article class="card" data-tech="gestion">
+            <figure class="card__media">
+              <img src="assets/img/project-3.svg" alt="Vista previa del sistema de venta y facturación" loading="lazy" width="800" height="500">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Sistema de venta y facturación</h3>
+              <p class="card__desc">Sistema para registrar las ventas de mi negocio, calcular totales con IVA y generar comprobantes.</p>
+              <p class="card__problem"><strong>Problema:</strong> llevar las ventas a mano toma tiempo, genera errores en los cálculos y no deja ver cuánto se vende al día.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">JavaScript</li><li class="tag">Docker</li><li class="tag">Excel</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal>Ver detalle</button>
+              </div>
+            </div>
+            <div class="card__details" hidden>
+              <h4>Qué hace</h4>
+              <ul>
+                <li>Registrar productos con su precio.</li>
+                <li>Armar una venta, calcular subtotal, IVA y total.</li>
+                <li>Ver el historial de ventas del día.</li>
+                <li>Base de datos ejecutándose en un contenedor Docker.</li>
+                <li>Reportes de ventas en Excel.</li>
+              </ul>
+              <h4>Qué aprendí</h4>
+              <p>Aplicar la programación a un caso real de mi negocio, guardar las ventas en una base de datos con Docker y analizarlas en Excel.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact">
+        <div class="contact__info">
+          <h2 id="contact-title">Contacto</h2>
+          <p>¿Tienes una pregunta, una idea de proyecto o una oportunidad de prácticas? Escríbeme.</p>
+          <ul class="contact__links">
+            <li><a href="mailto:sperear2@unemi.edu.ec">sperear2@unemi.edu.ec</a></li>
+            <li><a href="https://github.com/sperear2-web" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/steven-perea-7753a52aa" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <div class="field">
+            <label class="field__label" for="name">Nombre</label>
+            <input class="input" type="text" id="name" name="name" autocomplete="name" required minlength="3" aria-describedby="name-error">
+            <p class="field__error" id="name-error"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="email">Correo electrónico</label>
+            <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+            <p class="field__error" id="email-error"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="message">Mensaje</label>
+            <textarea class="input textarea" id="message" name="message" rows="5" required minlength="10" aria-describedby="message-error"></textarea>
+            <p class="field__error" id="message-error"></p>
+          </div>
+          <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+          <p class="form__status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Steven José Perea Romero</p>
+      <p><a href="design-system.html">Ver el Design System</a></p>
+    </div>
+  </footer>
+
+  <!-- Modal de proyecto -->
+  <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+    <div class="modal__content">
+      <button class="btn btn--icon modal__close" type="button" data-close-modal aria-label="Cerrar detalle">✕</button>
+      <h3 class="modal__title" id="modal-title"></h3>
+      <img class="modal__img" src="" alt="">
+      <div class="modal__body"></div>
+    </div>
+  </dialog>
+
+  <button class="btn btn--icon back-to-top" type="button" id="back-to-top" aria-label="Volver al inicio">↑</button>
+</body>
+</html>
