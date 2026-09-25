@@ -61,4 +61,4 @@ portafolio/
 
 ## Autor
 
-**Steven José Perea Romero** — Estudiante de Ingeniería en Software, UNEMI.
+**Steven José Perea Romero** — Estudiante de último semestre de Ingeniería en Software, UNEMI.
