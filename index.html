@@ -13,17 +13,10 @@
   <!-- Íconos de tecnologías -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230e6e6a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Arial%27 font-size=%2715%27 font-weight=%27700%27 fill=%27white%27 text-anchor=%27middle%27%3ESP%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Aplica el tema guardado antes de pintar para evitar parpadeo -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
+  <!-- Se carga antes de pintar para aplicar el tema guardado sin parpadeo -->
+  <script src="js/theme.js"></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -218,7 +211,7 @@
         <div class="projects">
           <article class="card" data-tech="web">
             <figure class="card__media">
-              <img src="assets/img/project-1.svg" alt="Vista previa del portafolio personal" loading="lazy" width="800" height="500">
+              <img src="assets/img/captura-desktop.jpg" alt="Captura de la página de inicio del portafolio" loading="lazy" width="800" height="500">
             </figure>
             <div class="card__body">
               <h3 class="card__title">Portafolio personal</h3>

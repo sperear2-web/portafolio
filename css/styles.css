@@ -25,6 +25,8 @@
   --color-success: #1f7a3e;
   --color-error: #b42318;
   --color-focus: #d99a1e;
+  --color-overlay: rgb(10 20 20 / 0.6);
+  --color-brand-excel: #1d6f42;
 
   /* Tipografía */
   --font-heading: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
@@ -64,6 +66,9 @@
   --container-max: 72rem;
   --nav-height: 4rem;
   --icon-size: 2.5rem;
+  --icon-size-sm: 1.75rem;
+  --control-padding-y: 0.75rem;
+  --control-padding-x: 1.25rem;
   --transition: 180ms ease;
 }
 
@@ -120,8 +125,8 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: var(--fs-xl); }
-h2 { font-size: var(--fs-xl); letter-spacing: -0.02em; }
-h3 { font-size: var(--fs-md); }
+h2, .type-h2 { font-size: var(--fs-xl); letter-spacing: -0.02em; }
+h3, .type-h3 { font-size: var(--fs-md); }
 h4 { font-size: var(--fs-base); }
 
 p {
@@ -291,7 +296,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: 0.75rem 1.25rem;
+  padding: var(--control-padding-y) var(--control-padding-x);
   border: 2px solid transparent;
   border-radius: var(--radius-sm);
   font: inherit;
@@ -394,7 +399,7 @@ a:hover {
 
 .skill__icon {
   width: var(--icon-size);
-  font-size: 1.75rem;
+  font-size: var(--icon-size-sm);
   text-align: center;
 }
 
@@ -402,11 +407,11 @@ a:hover {
 .skill__icon--excel {
   display: inline-grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-inline: calc((var(--icon-size) - 1.75rem) / 2);
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  margin-inline: calc((var(--icon-size) - var(--icon-size-sm)) / 2);
   border-radius: var(--radius-sm);
-  background-color: #1d6f42;
+  background-color: var(--color-brand-excel);
   color: #ffffff;
   font-family: var(--font-heading);
   font-size: var(--fs-base);
@@ -547,7 +552,7 @@ a:hover {
 
 .input {
   width: 100%;
-  padding: 0.75rem var(--space-md);
+  padding: var(--control-padding-y) var(--space-md);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
@@ -601,7 +606,7 @@ a:hover {
 }
 
 .modal::backdrop {
-  background-color: rgb(10 20 20 / 0.6);
+  background-color: var(--color-overlay);
 }
 
 .modal[open] {
@@ -696,7 +701,15 @@ a:hover {
   color: var(--color-text-muted);
 }
 
-.hero__title {
+.type-h2,
+.type-h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+.hero__title,
+.type-h1 {
   margin-bottom: var(--space-md);
   font-size: var(--fs-display);
   font-weight: 800;
@@ -843,7 +856,7 @@ a:hover {
 
 .swatches {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
   gap: var(--space-md);
   margin: 0;
   padding: 0;
@@ -866,6 +879,23 @@ a:hover {
   padding: var(--space-sm) var(--space-md);
 }
 
+.swatch__color--primary { background-color: var(--color-primary); }
+.swatch__color--secondary { background-color: var(--color-secondary); }
+.swatch__color--background { background-color: var(--color-background); }
+.swatch__color--surface { background-color: var(--color-surface); }
+.swatch__color--text { background-color: var(--color-text); }
+.swatch__color--text-muted { background-color: var(--color-text-muted); }
+.swatch__color--border { background-color: var(--color-border); }
+.swatch__color--error { background-color: var(--color-error); }
+.swatch__color--success { background-color: var(--color-success); }
+
+.swatch__info code {
+  display: inline-block;
+  margin-block: var(--space-xs);
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
 .swatch__name {
   display: block;
   font-weight: var(--fw-bold);
@@ -879,7 +909,7 @@ a:hover {
 
 .type-sample {
   display: grid;
-  grid-template-columns: 8rem 1fr;
+  grid-template-columns: 11rem 1fr;
   gap: var(--space-md);
   align-items: baseline;
   padding-block: var(--space-md);
@@ -888,6 +918,10 @@ a:hover {
 
 .type-sample > * {
   margin: 0;
+}
+
+.type-sample__meta code {
+  white-space: nowrap;
 }
 
 .type-sample__meta {
@@ -913,6 +947,17 @@ a:hover {
   align-items: center;
   gap: var(--space-md);
   font-size: var(--fs-sm);
+}
+
+.space-scale__bar--xs { width: var(--space-xs); }
+.space-scale__bar--sm { width: var(--space-sm); }
+.space-scale__bar--md { width: var(--space-md); }
+.space-scale__bar--lg { width: var(--space-lg); }
+.space-scale__bar--xl { width: var(--space-xl); }
+.space-scale__bar--2xl { width: var(--space-2xl); }
+
+.ds-note {
+  margin-top: var(--space-lg);
 }
 
 .space-scale__bar {
