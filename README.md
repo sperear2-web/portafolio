@@ -55,9 +55,8 @@ portafolio/
 
 ## Capturas
 
-<!-- Agrega aquí capturas: assets/img/captura-desktop.png y assets/img/captura-movil.png -->
-![Vista de escritorio](assets/img/captura-desktop.png)
-![Vista móvil](assets/img/captura-movil.png)
+![Vista de escritorio](assets/img/captura-desktop.jpg)
+![Vista móvil](assets/img/captura-movil.jpg)
 
 ## Autor
 
