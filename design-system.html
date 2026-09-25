@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Design System del portafolio: colores, tipografía, espaciado y componentes.">
+  <title>Design System | Steven Perea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="nav__brand" href="index.html#inicio">SP<span class="nav__brand-dot">.</span></a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="index.html#inicio">Inicio</a></li>
+        <li><a class="nav__link" href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a class="nav__link" href="index.html#skills">Skills</a></li>
+        <li><a class="nav__link" href="index.html#proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="design-system.html" aria-current="page">Design System</a></li>
+        <li><a class="nav__link" href="index.html#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="btn btn--icon" type="button" id="theme-toggle" aria-pressed="false" aria-label="Activar tema oscuro">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+        </button>
+        <button class="btn btn--icon nav__toggle" type="button" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" class="container">
+    <header class="ds-hero">
+      <h1>Design System / Componentes</h1>
+      <p class="section__intro">
+        Decisiones visuales y componentes reutilizables del portafolio. Todo lo que ves aquí
+        usa las mismas clases y variables CSS que el sitio. Cambia el tema para ver ambos valores.
+      </p>
+    </header>
+
+    <!-- ===================== COLORES ===================== -->
+    <section class="ds-block" aria-labelledby="ds-colors">
+      <h2 id="ds-colors">Colores</h2>
+      <p>Cada muestra lee su valor directamente de la variable CSS del tema activo.</p>
+      <ul class="swatches">
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-primary)"></div>
+          <div class="swatch__info"><span class="swatch__name">Primary</span><code>--color-primary</code><span class="swatch__value" data-token="--color-primary">#0e6e6a</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-secondary)"></div>
+          <div class="swatch__info"><span class="swatch__name">Secondary</span><code>--color-secondary</code><span class="swatch__value" data-token="--color-secondary">#d99a1e</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-background)"></div>
+          <div class="swatch__info"><span class="swatch__name">Background</span><code>--color-background</code><span class="swatch__value" data-token="--color-background">#f3f5f4</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-surface)"></div>
+          <div class="swatch__info"><span class="swatch__name">Surface</span><code>--color-surface</code><span class="swatch__value" data-token="--color-surface">#ffffff</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-text)"></div>
+          <div class="swatch__info"><span class="swatch__name">Text</span><code>--color-text</code><span class="swatch__value" data-token="--color-text">#14201f</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-text-muted)"></div>
+          <div class="swatch__info"><span class="swatch__name">Text muted</span><code>--color-text-muted</code><span class="swatch__value" data-token="--color-text-muted">#56615f</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-border)"></div>
+          <div class="swatch__info"><span class="swatch__name">Border</span><code>--color-border</code><span class="swatch__value" data-token="--color-border">#d5dcda</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-error)"></div>
+          <div class="swatch__info"><span class="swatch__name">Error</span><code>--color-error</code><span class="swatch__value" data-token="--color-error">#b42318</span></div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__color" style="background: var(--color-success)"></div>
+          <div class="swatch__info"><span class="swatch__name">Success</span><code>--color-success</code><span class="swatch__value" data-token="--color-success">#1f7a3e</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== TIPOGRAFÍA ===================== -->
+    <section class="ds-block" aria-labelledby="ds-type">
+      <h2 id="ds-type">Tipografía</h2>
+      <p>Títulos en <strong>Bricolage Grotesque</strong>; texto en <strong>Atkinson Hyperlegible</strong>, diseñada para máxima legibilidad. Escala modular de razón 1.25.</p>
+
+      <div class="type-sample">
+        <span class="type-sample__meta">h1 · <code>--fs-display</code></span>
+        <p class="hero__title">Steven</p>
+      </div>
+      <div class="type-sample">
+        <span class="type-sample__meta">h2 · <code>--fs-xl</code></span>
+        <p style="font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-xl); line-height: 1.1">Proyectos destacados</p>
+      </div>
+      <div class="type-sample">
+        <span class="type-sample__meta">h3 · <code>--fs-md</code></span>
+        <p style="font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-md)">Portafolio personal</p>
+      </div>
+      <div class="type-sample">
+        <span class="type-sample__meta">Párrafo · <code>--fs-base</code></span>
+        <p>Estoy aprendiendo a construir páginas web claras y fáciles de usar.</p>
+      </div>
+      <div class="type-sample">
+        <span class="type-sample__meta">Texto secundario</span>
+        <p class="text-muted">Información complementaria con <code>--color-text-muted</code>.</p>
+      </div>
+      <div class="type-sample">
+        <span class="type-sample__meta">Enlace</span>
+        <p><a href="index.html#contacto">Ir a la sección de contacto</a></p>
+      </div>
+    </section>
+
+    <!-- ===================== ESPACIADO ===================== -->
+    <section class="ds-block" aria-labelledby="ds-space">
+      <h2 id="ds-space">Espaciado</h2>
+      <p>Escala basada en <code>rem</code>. Se usa para padding, margin y gap en todo el sitio.</p>
+      <ul class="space-scale">
+        <li class="space-scale__item"><code>--space-xs</code><span>0.25rem</span><span class="space-scale__bar" style="width: var(--space-xs)"></span></li>
+        <li class="space-scale__item"><code>--space-sm</code><span>0.5rem</span><span class="space-scale__bar" style="width: var(--space-sm)"></span></li>
+        <li class="space-scale__item"><code>--space-md</code><span>1rem</span><span class="space-scale__bar" style="width: var(--space-md)"></span></li>
+        <li class="space-scale__item"><code>--space-lg</code><span>2rem</span><span class="space-scale__bar" style="width: var(--space-lg)"></span></li>
+        <li class="space-scale__item"><code>--space-xl</code><span>3rem</span><span class="space-scale__bar" style="width: var(--space-xl)"></span></li>
+        <li class="space-scale__item"><code>--space-2xl</code><span>5rem</span><span class="space-scale__bar" style="width: var(--space-2xl)"></span></li>
+      </ul>
+      <p style="margin-top: var(--space-lg)">
+        Radios: <code>--radius-sm</code> (0.375rem) para botones e inputs, <code>--radius-md</code> (0.75rem) para cards,
+        <code>--radius-pill</code> para tags y chips. Sombra: <code>--shadow-card</code>.
+      </p>
+    </section>
+
+    <!-- ===================== COMPONENTES ===================== -->
+    <section class="ds-block" aria-labelledby="ds-components">
+      <h2 id="ds-components">Componentes</h2>
+
+      <h3>Botones</h3>
+      <div class="ds-demo">
+        <button class="btn btn--primary" type="button">Primario</button>
+        <button class="btn btn--secondary" type="button">Secundario</button>
+        <button class="btn btn--ghost" type="button">Ghost</button>
+        <button class="btn btn--primary btn--sm" type="button">Pequeño</button>
+        <button class="btn btn--icon" type="button" aria-label="Botón de ícono de ejemplo">↑</button>
+      </div>
+      <p><code>.btn</code> + <code>.btn--primary</code> | <code>.btn--secondary</code> | <code>.btn--ghost</code> | <code>.btn--sm</code> | <code>.btn--icon</code></p>
+
+      <h3>Skill y tags</h3>
+      <div class="ds-demo ds-demo--stack">
+        <ul class="skills__list">
+          <li class="skill">
+            <i class="devicon-javascript-plain colored skill__icon" aria-hidden="true"></i>
+            <span class="skill__name">JavaScript</span>
+            <span class="skill__level" data-level="2"><span class="visually-hidden">Nivel:</span> Intermedio</span>
+          </li>
+        </ul>
+        <ul class="tags" aria-label="Tags de ejemplo">
+          <li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">JavaScript</li>
+        </ul>
+      </div>
+      <p><code>.skill</code> con <code>data-level="1|2|3"</code>. <code>.tag</code> dentro de <code>.tags</code>.</p>
+
+      <h3>Chips de filtro</h3>
+      <div class="ds-demo">
+        <button class="chip" type="button" aria-pressed="true">Activo</button>
+        <button class="chip" type="button" aria-pressed="false">Inactivo</button>
+      </div>
+
+      <h3>Card de proyecto</h3>
+      <div class="ds-demo">
+        <article class="card">
+          <figure class="card__media">
+            <img src="assets/img/project-2.svg" alt="Captura de ejemplo de un proyecto" width="800" height="500">
+          </figure>
+          <div class="card__body">
+            <h4 class="card__title">Título del proyecto</h4>
+            <p class="card__desc">Descripción breve de qué hace el proyecto.</p>
+            <p class="card__problem"><strong>Problema:</strong> la necesidad que resuelve.</p>
+            <ul class="tags" aria-label="Tecnologías">
+              <li class="tag">JavaScript</li><li class="tag">CSS</li>
+            </ul>
+            <div class="card__actions">
+              <button class="btn btn--primary btn--sm" type="button">Ver detalle</button>
+              <a class="btn btn--ghost btn--sm" href="index.html#proyectos">Repositorio</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3>Inputs y textarea</h3>
+      <div class="ds-demo ds-demo--stack">
+        <div class="field">
+          <label class="field__label" for="ds-input">Input normal</label>
+          <input class="input" type="text" id="ds-input" placeholder="Escribe aquí">
+        </div>
+        <div class="field">
+          <label class="field__label" for="ds-input-error">Input con error</label>
+          <input class="input" type="email" id="ds-input-error" value="correo-invalido" aria-invalid="true" aria-describedby="ds-error">
+          <p class="field__error" id="ds-error">Escribe un correo válido, por ejemplo nombre@dominio.com.</p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="ds-textarea">Textarea</label>
+          <textarea class="input textarea" id="ds-textarea" rows="3"></textarea>
+        </div>
+      </div>
+
+      <h3>Navbar</h3>
+      <p>El navbar de la parte superior es el componente real. Esta es una muestra estática con las mismas clases:</p>
+      <div class="ds-demo">
+        <nav class="nav" aria-label="Navbar de ejemplo">
+          <span class="nav__brand">SP<span class="nav__brand-dot">.</span></span>
+          <ul class="nav__menu">
+            <li><a class="nav__link is-active" href="index.html#inicio">Activo</a></li>
+            <li><a class="nav__link" href="index.html#proyectos">Enlace</a></li>
+            <li><a class="nav__link" href="index.html#contacto">Enlace</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Steven José Perea Romero</p>
+      <p><a href="index.html">Volver al portafolio</a></p>
+    </div>
+  </footer>
+
+  <button class="btn btn--icon back-to-top" type="button" id="back-to-top" aria-label="Volver al inicio">↑</button>
+</body>
+</html>
